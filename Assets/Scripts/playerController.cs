@@ -20,6 +20,9 @@ public class playerController : MonoBehaviour
     Vector3 velocity;
     bool isGrounded;
     // Start is called before the first frame update
+
+    // logic component of player generate sound 
+    public float interaction_radius = 3f;
     void Start()
     {
         cam = transform.GetComponent<Camera>();
@@ -36,8 +39,28 @@ public class playerController : MonoBehaviour
     {
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
-        Vector3 move = transform.right * x + transform.forward * z;
 
+        // sets interaction radius(volume) based on movement speed
+        if ((x == 0) && (z == 0))
+        {
+            interaction_radius = 0f;
+        }
+        else
+        {
+            interaction_radius = 4f;
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                moveSpeed = 25f;
+                interaction_radius = 8f;
+            }
+            else
+            {
+                moveSpeed = 12f;
+            }
+        }
+        // TODO: Add volume controls
+
+        Vector3 move = transform.right * x + transform.forward * z;
         controller.Move(move * moveSpeed * Time.deltaTime);
     }
 
@@ -59,5 +82,11 @@ public class playerController : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
+    }
+    // Draw our radius in the editor
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, interaction_radius);
     }
 }
