@@ -51,7 +51,7 @@ public class playerController : MonoBehaviour
             if (Input.GetKey(KeyCode.LeftShift))
             {
                 moveSpeed = 25f;
-                interaction_radius = 8f;
+                interaction_radius = 12f;
             }
             else
             {
