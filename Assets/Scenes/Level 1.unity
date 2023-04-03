@@ -54402,6 +54402,26 @@ PrefabInstance:
       propertyPath: rightShoulder
       value: 
       objectReference: {fileID: 345593360}
+    - target: {fileID: 975901159, guid: 06a31e7043085984b9ec9796f1a4d576, type: 3}
+      propertyPath: Loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 975901159, guid: 06a31e7043085984b9ec9796f1a4d576, type: 3}
+      propertyPath: m_Volume
+      value: 0.863
+      objectReference: {fileID: 0}
+    - target: {fileID: 975901159, guid: 06a31e7043085984b9ec9796f1a4d576, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 975901159, guid: 06a31e7043085984b9ec9796f1a4d576, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 975901159, guid: 06a31e7043085984b9ec9796f1a4d576, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: e87fc0197b569674cb9c08949df2017a, type: 2}
     - target: {fileID: 1482440970, guid: 06a31e7043085984b9ec9796f1a4d576, type: 3}
       propertyPath: m_Volume
       value: 1
@@ -54460,6 +54480,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06a31e7043085984b9ec9796f1a4d576, type: 3}
+--- !u!82 &922253865 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 975901159, guid: 06a31e7043085984b9ec9796f1a4d576, type: 3}
+  m_PrefabInstance: {fileID: 922253864}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &931196960
 GameObject:
   m_ObjectHideFlags: 0
@@ -85228,7 +85253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a5b723e60e70d044a8440a65aa1a2a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeMax: 20
+  timeMax: 80
   timeSincePress: 0
   current: 0
   since: 0
@@ -85236,9 +85261,10 @@ MonoBehaviour:
   light: 1
   pressed: 0
   movement: 1
-  maxCharge: 3
+  maxCharge: 80
   chargeRate: 5
   chargeButton: 114
+  windUp: {fileID: 922253865}
   animator: {fileID: 0}
 --- !u!43 &1475133472
 Mesh:
