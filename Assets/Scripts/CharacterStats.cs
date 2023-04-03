@@ -5,6 +5,11 @@ public class CharacterStats : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth { get; private set; }
 
+    public int damage = 1;
+    public int health = 100;
+    public float atkSpd = 1.0f;
+    public float moveSpd = 1.0f;
+
     public event System.Action<int, int> onHealthChanged;
 
     private void Awake()

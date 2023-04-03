@@ -11,6 +11,7 @@ public class cameraController : MonoBehaviour
     public Camera cam;
     float xRotation = 0f;
     public Transform neck;
+    public Transform rightShoulder;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,11 +25,11 @@ public class cameraController : MonoBehaviour
         float mouseY = Input.GetAxis("Mouse Y") * sensistivity * Time.deltaTime;
 
         xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -40f, 50f);
+        xRotation = Mathf.Clamp(xRotation, -40f, 40f);
 
         cam.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         transform.Rotate(Vector3.up * mouseX);
-        neck.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+        rightShoulder.localRotation = Quaternion.Euler(-xRotation+110, 170, 88);
 
     }
 }
