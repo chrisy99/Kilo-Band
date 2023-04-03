@@ -27,8 +27,8 @@ public class Torch_recharge : MonoBehaviour{
     public bool pressed = false;
     public bool movement = true;
 
-    public float maxCharge = 100f;   // Maximum charge level for the flashlight
-    public float chargeRate = 5f;    // Rate at which the flashlight charges per button press
+    public float maxCharge = 1f;   // Maximum charge level for the flashlight
+    public float chargeRate = 0.0002f;    // Rate at which the flashlight charges per button press
     public KeyCode chargeButton = KeyCode.R;   // Button to mash to charge the flashlight
 
     private Light flashlight;
@@ -48,7 +48,7 @@ public class Torch_recharge : MonoBehaviour{
     // Update is called once per frame
     void Update(){
         if (flashlight.enabled && currentCharge > 0f){
-            currentCharge -= Time.deltaTime;
+            currentCharge = currentCharge - (chargeRate*Time.deltaTime);
             if (currentCharge <= 0f){
                 // If the charge level has reached zero, turn off the flashlight
                 currentCharge = 0f;
