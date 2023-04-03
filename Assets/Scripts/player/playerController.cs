@@ -16,7 +16,9 @@ public class playerController : MonoBehaviour
     public float groundDistance = 0.4f;
     public LayerMask ground;
 
+    // variables for pickup
     items heldObject = null;
+    public Transform left_shoulder;
 
     Vector3 velocity;
     bool isGrounded;
@@ -34,10 +36,11 @@ public class playerController : MonoBehaviour
     {
         Move();
         MoveVertical();
-        PickThrow();
+        PickDrop();
+        Throw();
     }
 
-    void PickThrow()
+    void PickDrop()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -54,6 +57,7 @@ public class playerController : MonoBehaviour
                     items item = hit.collider.GetComponent<items>();
                     if (item != null)
                     {
+                        left_shoulder.localRotation = Quaternion.Euler(new Vector3((float)40.9, (float)18.2, (float)115.8));
                         item.Interact();
                         heldObject = item;
                     }
@@ -66,6 +70,25 @@ public class playerController : MonoBehaviour
             }
         }
     }
+    void Throw()
+    {
+        if (heldObject != null)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
+                if (Physics.Raycast(ray, out hit, 100))
+                {
+                    Vector3 forceDir = (hit.point - heldObject.transform.position).normalized;
+                    Vector3 force = forceDir * 1 + (transform.up * (float)0.5);
+                    heldObject.Throw(force);
+                    heldObject = null;
+                }
+            }
+        }
+    }
+
     void Move()
     {
         float x = Input.GetAxis("Horizontal");
