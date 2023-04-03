@@ -101,15 +101,15 @@ public class playerController : MonoBehaviour
         }
         else
         {
-            interaction_radius = 4f;
+            interaction_radius = 14f;
             if (Input.GetKey(KeyCode.LeftShift))
             {
-                moveSpeed = 25f;
-                interaction_radius = 12f;
+                moveSpeed = 15f;
+                interaction_radius = 30f;
             }
             else
             {
-                moveSpeed = 12f;
+                moveSpeed = 10f;
             }
         }
         // TODO: Add volume controls

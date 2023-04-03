@@ -1,7 +1,7 @@
 using System.Diagnostics;
 using UnityEngine;
 
-/*	
+/*
  *	Coded by Brackeys.
  *	Borrowed 21/2/2023
 	This component is for all objects that the player can
