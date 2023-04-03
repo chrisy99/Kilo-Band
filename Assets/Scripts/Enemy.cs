@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     public CharacterStats stats;
     public Rigidbody rigidBody;
     public Transform target;
+    public EnemyController ec;
     private float lastAttackedAt = 0.0f;
 
     public float interactionRadius = 3f;
@@ -19,25 +20,32 @@ public class Enemy : MonoBehaviour
         stats = GetComponent<CharacterStats>();
         rigidBody = GetComponent<Rigidbody>();
         target = PlayerManager.instance.player.transform;
+        ec = GetComponent<EnemyController>();
 
         switch (enemyType)
         {
             case EnemyType.Normal:
                 stats.damage = 10;
-                stats.moveSpd = 1.0f;
+                stats.moveSpd = 9.0f;
                 stats.atkSpd = 1.0f;
+                ec.baseRadius = 3.0f;
+                ec.agent.speed = stats.moveSpd;
                 break;
 
             case EnemyType.Slow:
                 stats.damage = 20;
-                stats.moveSpd = 0.5f;
+                stats.moveSpd = 7.0f;
                 stats.atkSpd = 3.0f;
+                ec.baseRadius = 9.0f;
+                ec.agent.speed = stats.moveSpd;
                 break;
 
             case EnemyType.Fast:
                 stats.damage = 4;
-                stats.moveSpd = 2.0f;
+                stats.moveSpd = 12.5f;
                 stats.atkSpd = 0.3f;
+                ec.baseRadius = 1.0f;
+                ec.agent.speed = stats.moveSpd;
                 break;
         }
     }

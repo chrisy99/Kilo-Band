@@ -7,9 +7,10 @@ public class EnemyController : MonoBehaviour
 {
 
     public float lookRadius = 10f;
+    public float baseRadius = 3f;
     public float targetRadius = 3f;
     public Transform target;
-    NavMeshAgent agent;
+    public NavMeshAgent agent;
     public AudioSource footstepSound, monsterRoar;
     public Animator anim;
     public CharacterStats enemyStats;
@@ -22,7 +23,7 @@ public class EnemyController : MonoBehaviour
         anim = GetComponent<Animator>();
         targetRadius = target.GetComponent<playerController>().interaction_radius;
         enemyStats = GetComponent<Enemy>().GetComponent<CharacterStats>();
-        agent.speed = enemyStats.moveSpd;
+        
     }
 
     // Update is called once per frame
@@ -30,7 +31,7 @@ public class EnemyController : MonoBehaviour
     {
         targetRadius = target.GetComponent<playerController>().interaction_radius;
         float distance = Vector3.Distance(target.position, transform.position);
-        lookRadius = 3f + targetRadius;
+        lookRadius = baseRadius + targetRadius;
         if (distance <= lookRadius)
         {
             StartCoroutine(monsterRoarAnim());
@@ -50,7 +51,7 @@ public class EnemyController : MonoBehaviour
     {
         Vector3 direction = (target.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
-        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 2f);
     }
 
     void OnDrawGizmosSelected()
