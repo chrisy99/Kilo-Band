@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -12,6 +14,8 @@ public class EnemyController : MonoBehaviour
     NavMeshAgent agent;
     public AudioSource footstepSound, monsterRoar;
     public Animator anim;
+    public bool playerHeard;
+  
 
     // Start is called before the first frame update
     void Start()
@@ -20,24 +24,29 @@ public class EnemyController : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         targetRadius = target.GetComponent<playerController>().interaction_radius;
+
+        agent.updatePosition = false;
     }
 
     // Update is called once per frame
     protected void Update()
     {
+        
+
         targetRadius = target.GetComponent<playerController>().interaction_radius;
         float distance = Vector3.Distance(target.position, transform.position);
         lookRadius = 3f + targetRadius;
+
         if (distance <= lookRadius)
         {
-            StartCoroutine(monsterRoarAnim());
-
+            playerHeard= true;
+            monsterRoarAnim();
             agent.SetDestination(target.position);
 
             if (distance <= agent.stoppingDistance)
             {
                 FaceTarget();
-                
+                anim.SetTrigger("Attack");
                 return;
             }
         }
@@ -57,11 +66,27 @@ public class EnemyController : MonoBehaviour
 
     }
 
-    IEnumerator monsterRoarAnim()
-    {  
-            anim.SetBool("playerHeard", true);
-            monsterRoar.enabled= true;
+    void monsterRoarAnim()
+    {
+        if (playerHeard == true && Vector3.Distance(target.position, transform.position) <= agent.stoppingDistance)
+        {
+            anim.SetTrigger("attack");
+            playerHeard = false;
+            monsterRoar.Play();
 
-        yield return new WaitForSeconds(120F);
+        }
+        else if(playerHeard == true) 
+        {
+            anim.SetTrigger("playerHeard");
+            playerHeard = false;
+            monsterRoar.Play();
+        }
+
+        else
+        {
+            anim.ResetTrigger("playerHeard");
+            anim.ResetTrigger("Attack");
+            playerHeard = false;
+        }
     }
 }
