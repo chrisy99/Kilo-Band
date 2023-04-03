@@ -25,9 +25,10 @@ public class EnemyController : MonoBehaviour
         anim = GetComponent<Animator>();
         targetRadius = target.GetComponent<playerController>().interaction_radius;
         enemyStats = GetComponent<Enemy>().GetComponent<CharacterStats>();
-        
-    }
 
+    }
+}
+/*
     // Update is called once per frame
     protected void Update()
     {
@@ -50,7 +51,7 @@ public class EnemyController : MonoBehaviour
             }
         }
     }
-
+}
     void FaceTarget()
     {
         Vector3 direction = (target.position - transform.position).normalized;
@@ -89,3 +90,4 @@ public class EnemyController : MonoBehaviour
         }
     }
 }
+*/
