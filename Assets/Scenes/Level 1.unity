@@ -22491,6 +22491,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 320a826fe9dea3745875c53e962eb757, type: 3}
   m_PrefabInstance: {fileID: 332156713}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &345593360 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4768815862614191999, guid: 06a31e7043085984b9ec9796f1a4d576, type: 3}
+  m_PrefabInstance: {fileID: 922253864}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &347309017
 GameObject:
   m_ObjectHideFlags: 0
@@ -54393,6 +54398,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 548128067, guid: 06a31e7043085984b9ec9796f1a4d576, type: 3}
+      propertyPath: rightShoulder
+      value: 
+      objectReference: {fileID: 345593360}
     - target: {fileID: 4637411117985050576, guid: 06a31e7043085984b9ec9796f1a4d576, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -85219,7 +85228,7 @@ MonoBehaviour:
   light: 1
   pressed: 0
   movement: 1
-  maxCharge: 100
+  maxCharge: 3
   chargeRate: 5
   chargeButton: 114
   animator: {fileID: 0}
