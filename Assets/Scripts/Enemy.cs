@@ -10,8 +10,8 @@ public class Enemy : MonoBehaviour
     public Rigidbody rigidBody;
     public Transform target;
     public EnemyController ec;
-    private float lastAttackedAt = 0.0f;
 
+    private float lastAttackedAt = 0.0f;
     public float interactionRadius = 3f;
 
     // Start is called before the first frame update

@@ -8,6 +8,8 @@ public class playerController : MonoBehaviour
     Camera cam;
     public CharacterController controller;
 
+
+
     // Physics variables
     const float gravity = -9.8f;
     public float moveSpeed = 12f;
@@ -37,7 +39,7 @@ public class playerController : MonoBehaviour
         Move();
         MoveVertical();
         PickDrop();
-        Throw();
+        StartCoroutine(Throw());
     }
 
     void PickDrop()
@@ -70,7 +72,7 @@ public class playerController : MonoBehaviour
             }
         }
     }
-    void Throw()
+    IEnumerator Throw()
     {
         if (heldObject != null)
         {
@@ -83,6 +85,10 @@ public class playerController : MonoBehaviour
                     Vector3 forceDir = (hit.point - heldObject.transform.position).normalized;
                     Vector3 force = forceDir * 1 + (transform.up * (float)0.5);
                     heldObject.Throw(force);
+
+                    yield return new WaitForSecondsRealtime(2);
+                    EventManager.instance.onObjectThrown(heldObject);
+
                     heldObject = null;
                 }
             }
