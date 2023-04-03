@@ -85194,6 +85194,35 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 146158c62f2e4f04e80f7d21c00d4f45, type: 3}
+--- !u!1 &1472415268 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1181092937042788, guid: 06a31e7043085984b9ec9796f1a4d576, type: 3}
+  m_PrefabInstance: {fileID: 922253864}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1472415271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1472415268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a5b723e60e70d044a8440a65aa1a2a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeMax: 20
+  timeSincePress: 0
+  current: 0
+  since: 0
+  timeRunning: 0
+  light: 1
+  pressed: 0
+  movement: 1
+  maxCharge: 100
+  chargeRate: 5
+  chargeButton: 114
+  animator: {fileID: 0}
 --- !u!43 &1475133472
 Mesh:
   m_ObjectHideFlags: 0
