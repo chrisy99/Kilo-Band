@@ -10,12 +10,15 @@ public class EnemyController : MonoBehaviour
     public float targetRadius = 3f;
     public Transform target;
     NavMeshAgent agent;
+    public AudioSource footstepSound, monsterRoar;
+    public Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
         // target = PlayerManager.instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
+        anim = GetComponent<Animator>();
         targetRadius = target.GetComponent<playerController>().interaction_radius;
     }
 
@@ -27,11 +30,14 @@ public class EnemyController : MonoBehaviour
         lookRadius = 3f + targetRadius;
         if (distance <= lookRadius)
         {
+            StartCoroutine(monsterRoarAnim());
+
             agent.SetDestination(target.position);
 
             if (distance <= agent.stoppingDistance)
             {
                 FaceTarget();
+                
                 return;
             }
         }
@@ -49,5 +55,13 @@ public class EnemyController : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, lookRadius);
 
+    }
+
+    IEnumerator monsterRoarAnim()
+    {  
+            anim.SetBool("playerHeard", true);
+            monsterRoar.enabled= true;
+
+        yield return new WaitForSeconds(120F);
     }
 }
