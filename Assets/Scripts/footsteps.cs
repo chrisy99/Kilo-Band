@@ -13,11 +13,6 @@ public class footsteps : MonoBehaviour
         {
             footstepSound.enabled = true;
 
-            if(Input.GetKey(KeyCode.LeftShift))
-            {
-                footstepSound.enabled = false;
-                sprintSound.enabled = true;
-            }
         }
         else
         {
