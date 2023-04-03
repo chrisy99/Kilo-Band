@@ -17,6 +17,7 @@ public class EnemyController : MonoBehaviour
     public Animator anim;
     public CharacterStats enemyStats;
     public bool playerHeard;
+    Vector3 lastKnownPosition;
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +37,7 @@ public class EnemyController : MonoBehaviour
         
         targetRadius = target.GetComponent<playerController>().interaction_radius;
         float distance = Vector3.Distance(target.position, transform.position);
+        float distanceToLast = Vector3.Distance(lastKnownPosition, transform.position);
         lookRadius = baseRadius + targetRadius;
 
         if (distance <= lookRadius)
@@ -43,6 +45,7 @@ public class EnemyController : MonoBehaviour
             anim.SetFloat("Movement", 1, 0.3f, Time.deltaTime);
             StartCoroutine(monsterRoarTask());
             agent.SetDestination(target.position);
+            lastKnownPosition = target.position;
 
             if (distance <= agent.stoppingDistance)
             {
@@ -51,7 +54,7 @@ public class EnemyController : MonoBehaviour
                 return;
             }
         }
-        else if (agent.speed < 1)
+        else if (distanceToLast < 2)
         {
             anim.SetFloat("Movement", 0, 0.3f, Time.deltaTime);
         }
