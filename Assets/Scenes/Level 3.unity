@@ -4388,7 +4388,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh79690
+  m_Name: pb_Mesh95534
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6405,6 +6405,37 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+<<<<<<< Updated upstream
+=======
+    - target: {fileID: 548128069, guid: 06a31e7043085984b9ec9796f1a4d576, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: e87fc0197b569674cb9c08949df2017a, type: 2}
+    - target: {fileID: 548128070, guid: 06a31e7043085984b9ec9796f1a4d576, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: e87fc0197b569674cb9c08949df2017a, type: 2}
+    - target: {fileID: 975901159, guid: 06a31e7043085984b9ec9796f1a4d576, type: 3}
+      propertyPath: Loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 975901159, guid: 06a31e7043085984b9ec9796f1a4d576, type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 975901159, guid: 06a31e7043085984b9ec9796f1a4d576, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 975901159, guid: 06a31e7043085984b9ec9796f1a4d576, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1482440970, guid: 06a31e7043085984b9ec9796f1a4d576, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: e87fc0197b569674cb9c08949df2017a, type: 2}
+>>>>>>> Stashed changes
     - target: {fileID: 4637411117985050576, guid: 06a31e7043085984b9ec9796f1a4d576, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -6494,6 +6525,44 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+<<<<<<< Updated upstream
+=======
+--- !u!4 &753895213 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4637411117985050576, guid: 06a31e7043085984b9ec9796f1a4d576, type: 3}
+  m_PrefabInstance: {fileID: 753895210}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &753895214 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1181092937042788, guid: 06a31e7043085984b9ec9796f1a4d576, type: 3}
+  m_PrefabInstance: {fileID: 753895210}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &753895215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753895214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a5b723e60e70d044a8440a65aa1a2a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeMax: 20
+  timeSincePress: 0
+  current: 0
+  since: 0
+  timeRunning: 0
+  light: 1
+  pressed: 0
+  movement: 1
+  maxCharge: 100
+  chargeRate: 5
+  chargeButton: 114
+  windUp: {fileID: 1373138204}
+  animator: {fileID: 0}
+>>>>>>> Stashed changes
 --- !u!1 &766398853
 GameObject:
   m_ObjectHideFlags: 0
@@ -13996,6 +14065,11 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!82 &1373138204 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 975901159, guid: 06a31e7043085984b9ec9796f1a4d576, type: 3}
+  m_PrefabInstance: {fileID: 753895210}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1443304011
 GameObject:
   m_ObjectHideFlags: 0
@@ -18147,7 +18221,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh191844
+  m_Name: pb_Mesh95628
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

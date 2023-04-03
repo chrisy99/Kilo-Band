@@ -35,7 +35,7 @@ public class Torch_recharge : MonoBehaviour{
     private Light flashlight;
     private float currentCharge;
 
-
+    public AudioSource windUp;
     public Animator animator;
     byte recharge=0;
 
@@ -49,13 +49,24 @@ public class Torch_recharge : MonoBehaviour{
     // Update is called once per frame
     void Update(){
         if (flashlight.enabled && currentCharge > 0f){
-            currentCharge -= Time.deltaTime;
+            currentCharge = currentCharge - (chargeRate*Time.deltaTime);
             if (currentCharge <= 0f){
                 // If the charge level has reached zero, turn off the flashlight
                 currentCharge = 0f;
                 flashlight.enabled = false;
             }
         }
+<<<<<<< Updated upstream
+=======
+        if (currentCharge <= 0 && Input.GetKeyDown(chargeButton)){
+                //animator.SetInteger ("name", recharge);
+                //currentCharge = Mathf.Min(currentCharge + 20, maxCharge);
+                windUp.Play();
+                currentCharge = maxCharge;
+                flashlight.enabled = true;
+
+        }
+>>>>>>> Stashed changes
 
         // If the charge button is pressed, add to the charge level up to the maximum
         if (Input.GetKeyDown(chargeButton)){
