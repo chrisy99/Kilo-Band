@@ -1,12 +1,13 @@
 using System.Diagnostics;
 using UnityEngine;
 
-/*	
+/*
  *	Coded by Brackeys.
  *	Borrowed 21/2/2023
 	This component is for all objects that the player can
 	interact with such as enemies, items etc. It is meant
 	to be used as a base class.
+*/
 
 public class Interactable : MonoBehaviour
 {
@@ -42,6 +43,7 @@ public class Interactable : MonoBehaviour
         }
     }
 
+    /*
     // Called when the object starts being focused
     public void OnFocused(Transform playerTransform)
     {
@@ -57,6 +59,7 @@ public class Interactable : MonoBehaviour
         player = null;
         hasInteracted = false;
     }
+    */
 
     // Draw our radius in the editor
     void OnDrawGizmosSelected()
@@ -69,4 +72,3 @@ public class Interactable : MonoBehaviour
     }
 
 }
-*/
