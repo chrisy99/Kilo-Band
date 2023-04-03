@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -29,19 +31,21 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     protected void Update()
     {
+        
+
         targetRadius = target.GetComponent<playerController>().interaction_radius;
         float distance = Vector3.Distance(target.position, transform.position);
         lookRadius = baseRadius + targetRadius;
         if (distance <= lookRadius)
         {
-            StartCoroutine(monsterRoarAnim());
-
+            playerHeard= true;
+            monsterRoarAnim();
             agent.SetDestination(target.position);
 
             if (distance <= agent.stoppingDistance)
             {
                 FaceTarget();
-                
+                anim.SetTrigger("Attack");
                 return;
             }
         }
@@ -61,11 +65,27 @@ public class EnemyController : MonoBehaviour
 
     }
 
-    IEnumerator monsterRoarAnim()
-    {  
-            anim.SetBool("playerHeard", true);
-            monsterRoar.enabled= true;
+    void monsterRoarAnim()
+    {
+        if (playerHeard == true && Vector3.Distance(target.position, transform.position) <= agent.stoppingDistance)
+        {
+            anim.SetTrigger("attack");
+            playerHeard = false;
+            monsterRoar.Play();
 
-        yield return new WaitForSeconds(120F);
+        }
+        else if(playerHeard == true) 
+        {
+            anim.SetTrigger("playerHeard");
+            playerHeard = false;
+            monsterRoar.Play();
+        }
+
+        else
+        {
+            anim.ResetTrigger("playerHeard");
+            anim.ResetTrigger("Attack");
+            playerHeard = false;
+        }
     }
 }

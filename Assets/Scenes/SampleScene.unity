@@ -1530,7 +1530,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 494698, guid: 332254905319da1469830bd3e8725b48, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.303236
+      value: 25.03
       objectReference: {fileID: 0}
     - target: {fileID: 494698, guid: 332254905319da1469830bd3e8725b48, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1538,7 +1538,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 494698, guid: 332254905319da1469830bd3e8725b48, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 19.772383
+      value: 19.77
       objectReference: {fileID: 0}
     - target: {fileID: 494698, guid: 332254905319da1469830bd3e8725b48, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1588,11 +1588,11 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 510422604}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 9e639ee715460f44d874de7d0f8e97c9, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -46277,7 +46277,7 @@ MeshCollider:
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 1620315515}
+  m_Mesh: {fileID: 429647463}
 --- !u!33 &1211897319
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -46285,7 +46285,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1211897316}
-  m_Mesh: {fileID: 1620315515}
+  m_Mesh: {fileID: 429647463}
 --- !u!23 &1211897320
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -47052,8 +47052,8 @@ MonoBehaviour:
     m_AreaError: 15
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
-  m_Mesh: {fileID: 1620315515}
-  m_VersionIndex: 5596
+  m_Mesh: {fileID: 429647463}
+  m_VersionIndex: 5599
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -96544,4 +96544,5 @@ PrefabInstance:
     - {fileID: 4637411117105715685, guid: 06a31e7043085984b9ec9796f1a4d576, type: 3}
     - {fileID: 4637411117985050583, guid: 06a31e7043085984b9ec9796f1a4d576, type: 3}
     - {fileID: 4637411117985050581, guid: 06a31e7043085984b9ec9796f1a4d576, type: 3}
+    - {fileID: 4637411117315214081, guid: 06a31e7043085984b9ec9796f1a4d576, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 06a31e7043085984b9ec9796f1a4d576, type: 3}
