@@ -8,7 +8,6 @@ using UnityEngine;
 	interact with such as enemies, items etc. It is meant
 	to be used as a base class.
 
-
 public class Interactable : MonoBehaviour
 {
 

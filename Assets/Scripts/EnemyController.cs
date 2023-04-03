@@ -12,14 +12,17 @@ public class EnemyController : MonoBehaviour
     NavMeshAgent agent;
     public AudioSource footstepSound, monsterRoar;
     public Animator anim;
+    public CharacterStats enemyStats;
 
     // Start is called before the first frame update
     void Start()
     {
-        // target = PlayerManager.instance.player.transform;
+        target = PlayerManager.instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         targetRadius = target.GetComponent<playerController>().interaction_radius;
+        enemyStats = GetComponent<Enemy>().GetComponent<CharacterStats>();
+        agent.speed = enemyStats.moveSpd;
     }
 
     // Update is called once per frame
