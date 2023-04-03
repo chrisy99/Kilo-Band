@@ -62,6 +62,6 @@ public class EnemyController : MonoBehaviour
             anim.SetBool("playerHeard", true);
             monsterRoar.enabled= true;
 
-        yield return new WaitForSeconds(120F;
+        yield return new WaitForSeconds(120F);
     }
 }

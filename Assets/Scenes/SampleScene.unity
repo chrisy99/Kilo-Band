@@ -513,6 +513,11 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!20 &74799052 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 4637411117315214080, guid: 06a31e7043085984b9ec9796f1a4d576, type: 3}
+  m_PrefabInstance: {fileID: 4637411117707847283}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &112183884
 GameObject:
   m_ObjectHideFlags: 0
@@ -1220,6 +1225,46 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!143 &278809008 stripped
+CharacterController:
+  m_CorrespondingSourceObject: {fileID: 4637411117985050577, guid: 06a31e7043085984b9ec9796f1a4d576, type: 3}
+  m_PrefabInstance: {fileID: 4637411117707847283}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &278809009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278808993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3147e9fd4e441c8488c7bb96cf7efb3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 278809008}
+  moveSpeed: 12
+  groundCheck: {fileID: 1226468064}
+  groundDistance: 0.4
+  ground:
+    serializedVersion: 2
+    m_Bits: 0
+  interaction_radius: 3
+--- !u!114 &278809010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278808993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 290bbf5c85a064b45a8950d3cef8abd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sensistivity: 600
+  cam: {fileID: 74799052}
+  neck: {fileID: 726620329}
 --- !u!1001 &320664908
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1300,7 +1345,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 494698, guid: 332254905319da1469830bd3e8725b48, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 494698, guid: 332254905319da1469830bd3e8725b48, type: 3}
       propertyPath: m_LocalScale.x
@@ -25402,6 +25447,11 @@ PrefabInstance:
     - {fileID: 3817763553943587274, guid: b5f93a943008a84458e776deb555dadb, type: 3}
     - {fileID: 3817763553943587275, guid: b5f93a943008a84458e776deb555dadb, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b5f93a943008a84458e776deb555dadb, type: 3}
+--- !u!4 &726620329 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1712148502986564766, guid: c542f01d57d947443bb4910e4dd0f749, type: 3}
+  m_PrefabInstance: {fileID: 1319390522}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &735545092
 GameObject:
   m_ObjectHideFlags: 0
@@ -46896,6 +46946,11 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!4 &1226468064 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4637411117537695222, guid: 06a31e7043085984b9ec9796f1a4d576, type: 3}
+  m_PrefabInstance: {fileID: 4637411117707847283}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1254426647
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -74188,6 +74243,9 @@ MonoBehaviour:
   lookRadius: 3
   targetRadius: 3
   target: {fileID: 278809003}
+  footstepSound: {fileID: 0}
+  monsterRoar: {fileID: 0}
+  anim: {fileID: 0}
 --- !u!850595691 &1799794314
 LightingSettings:
   m_ObjectHideFlags: 0
@@ -96578,4 +96636,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4637411117105715685, guid: 06a31e7043085984b9ec9796f1a4d576, type: 3}
+    - {fileID: 4637411117985050583, guid: 06a31e7043085984b9ec9796f1a4d576, type: 3}
+    - {fileID: 4637411117985050581, guid: 06a31e7043085984b9ec9796f1a4d576, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 06a31e7043085984b9ec9796f1a4d576, type: 3}
