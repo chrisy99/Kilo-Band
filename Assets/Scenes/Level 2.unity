@@ -11043,6 +11043,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 59c7451ed4e8f9b4d873adf10daa7b2b, type: 3}
   m_PrefabInstance: {fileID: 1028251455}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &1043815985 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 975901159, guid: 06a31e7043085984b9ec9796f1a4d576, type: 3}
+  m_PrefabInstance: {fileID: 1441149199}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1044350867
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15728,6 +15733,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 975901159, guid: 06a31e7043085984b9ec9796f1a4d576, type: 3}
+      propertyPath: Loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 975901159, guid: 06a31e7043085984b9ec9796f1a4d576, type: 3}
+      propertyPath: m_Volume
+      value: 0.833
+      objectReference: {fileID: 0}
+    - target: {fileID: 975901159, guid: 06a31e7043085984b9ec9796f1a4d576, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 975901159, guid: 06a31e7043085984b9ec9796f1a4d576, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 975901159, guid: 06a31e7043085984b9ec9796f1a4d576, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: e87fc0197b569674cb9c08949df2017a, type: 2}
     - target: {fileID: 1482440969, guid: 06a31e7043085984b9ec9796f1a4d576, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -15823,6 +15848,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4637411117985050576, guid: 06a31e7043085984b9ec9796f1a4d576, type: 3}
   m_PrefabInstance: {fileID: 1441149199}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1441149201 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1181092937042788, guid: 06a31e7043085984b9ec9796f1a4d576, type: 3}
+  m_PrefabInstance: {fileID: 1441149199}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1441149202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1441149201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a5b723e60e70d044a8440a65aa1a2a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeMax: 20
+  timeSincePress: 0
+  current: 0
+  since: 0
+  timeRunning: 0
+  light: 1
+  pressed: 0
+  movement: 1
+  maxCharge: 50
+  chargeRate: 5
+  chargeButton: 114
+  windUp: {fileID: 1043815985}
+  animator: {fileID: 0}
 --- !u!1001 &1448061992
 PrefabInstance:
   m_ObjectHideFlags: 0
