@@ -16,6 +16,7 @@ public class playerController : MonoBehaviour
     public float groundDistance = 0.4f;
     public LayerMask ground;
 
+    items heldObject = null;
 
     Vector3 velocity;
     bool isGrounded;
@@ -33,8 +34,38 @@ public class playerController : MonoBehaviour
     {
         Move();
         MoveVertical();
+        PickThrow();
     }
 
+    void PickThrow()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (heldObject == null)
+            {
+
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
+
+                if (Physics.Raycast(ray, out hit, 100))
+                {
+                    Vector3 clickPos = new Vector3(hit.point.x, transform.position.y, hit.point.z);
+                    transform.LookAt(clickPos);
+                    items item = hit.collider.GetComponent<items>();
+                    if (item != null)
+                    {
+                        item.Interact();
+                        heldObject = item;
+                    }
+                }
+            }
+            else
+            {
+                heldObject.Detach();
+                heldObject = null;
+            }
+        }
+    }
     void Move()
     {
         float x = Input.GetAxis("Horizontal");
