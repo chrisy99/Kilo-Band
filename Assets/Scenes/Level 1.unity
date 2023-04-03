@@ -54402,6 +54402,14 @@ PrefabInstance:
       propertyPath: rightShoulder
       value: 
       objectReference: {fileID: 345593360}
+    - target: {fileID: 1482440970, guid: 06a31e7043085984b9ec9796f1a4d576, type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1482440970, guid: 06a31e7043085984b9ec9796f1a4d576, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: e87fc0197b569674cb9c08949df2017a, type: 2}
     - target: {fileID: 4637411117985050576, guid: 06a31e7043085984b9ec9796f1a4d576, type: 3}
       propertyPath: m_RootOrder
       value: 0
