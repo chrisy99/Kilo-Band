@@ -21,6 +21,7 @@ public class Torch_recharge : MonoBehaviour{
     public float current;
     public float since;
 
+    public AudioSource torch_wind;
 
     public bool timeRunning = false;
     public bool light = true;
