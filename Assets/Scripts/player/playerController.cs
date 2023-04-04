@@ -41,6 +41,7 @@ public class playerController : MonoBehaviour
         MoveVertical();
         PickDrop();
         StartCoroutine(Throw());
+        Open();
     }
 
     void Open()
