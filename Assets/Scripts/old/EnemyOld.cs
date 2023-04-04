@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterStats))]
-public class Enemy : MonoBehaviour
+public class EnemyOld : MonoBehaviour
 {
     public EnemyType enemyType;
     public CharacterStats stats;
@@ -97,5 +97,3 @@ public class Enemy : MonoBehaviour
 
     }
 }
-
-

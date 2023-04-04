@@ -11,7 +11,6 @@ public class SettingsManager : MonoBehaviour
     void Awake()
     {
         instance = this;
-        DontDestroyOnLoad(gameObject);
     }
 
     #endregion

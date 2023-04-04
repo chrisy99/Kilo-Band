@@ -51,7 +51,7 @@ public class CharacterStats : MonoBehaviour
     public virtual void Die()
     {
         Debug.Log(transform.name + " died.");
-
-        gameObject.SetActive(false);
+        LevelLoader.Instance.LoadSpecificLevel("Game Over");
+        //gameObject.SetActive(false);
     }
 }

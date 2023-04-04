@@ -22,6 +22,7 @@ public class footsteps : MonoBehaviour
         else
         {
             footstepSound.enabled = false;
+            sprintSound.enabled = false;
         }
     }
 }
