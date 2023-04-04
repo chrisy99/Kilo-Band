@@ -47,6 +47,11 @@ public class LevelLoader : MonoBehaviour
         StartCoroutine(LoadLevel(LevelName));
     }
 
+    public void LoadSpecificLevelIndex(int index)
+    {
+        StartCoroutine(LoadLevel(index));
+    }
+
     IEnumerator LoadLevel(int LevelIndex)
     {
         //Play Animation

@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class playerController : MonoBehaviour
 {
+
+    public Rigidbody rigidBody;
+
     // Game Objects
     Camera cam;
     public CharacterController controller;
-
-
 
     // Physics variables
     const float gravity = -9.8f;
@@ -42,6 +43,27 @@ public class playerController : MonoBehaviour
         StartCoroutine(Throw());
     }
 
+    void Open()
+    {
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit, 100))
+            {
+                Debug.Log("hit!");
+                Vector3 clickPos = new Vector3(hit.point.x, transform.position.y, hit.point.z);
+                transform.LookAt(clickPos);
+                GameObject portal = hit.transform.gameObject;
+                if (portal.tag == "Portal")
+                {
+                    LevelLoader.Instance.LoadNextLevel();
+                }
+            }
+        }
+    }
+
     void PickDrop()
     {
         if (Input.GetKeyDown(KeyCode.E))
@@ -72,6 +94,7 @@ public class playerController : MonoBehaviour
             }
         }
     }
+
     IEnumerator Throw()
     {
         if (heldObject != null)
@@ -148,5 +171,23 @@ public class playerController : MonoBehaviour
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, interaction_radius);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.transform.gameObject.tag == "Enemy")
+        {
+            rigidBody.constraints = RigidbodyConstraints.FreezeAll;
+            Debug.Log("Collision with enemy detected");
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.transform.gameObject.tag == "Enemy")
+        {
+            rigidBody.constraints = RigidbodyConstraints.None;
+            Debug.Log("Collision exit with enemy detected");
+        }
     }
 }

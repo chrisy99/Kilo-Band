@@ -12,7 +12,6 @@ public class EventManager : MonoBehaviour
     void Awake()
     {
         instance = this;
-        DontDestroyOnLoad(gameObject);
     }
 
     #endregion
